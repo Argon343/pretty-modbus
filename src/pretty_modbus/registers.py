@@ -711,12 +711,12 @@ _DECODE_DISPATCH = {
 # We only check the numerical bounds of integers, right now. Checking
 # floats doesn't make much sense, as they just become infinite.
 _NUMERICAL_BOUNDS = {
-    "i16": (-(2 ** 15), 2 ** 15 - 1),
-    "i32": (-(2 ** 31), 2 ** 31 - 1),
-    "i64": (-(2 ** 63), 2 ** 63 - 1),
-    "u16": (0, 2 ** 16 - 1),
-    "u32": (0, 2 ** 32 - 1),
-    "u64": (0, 2 ** 64 - 1),
+    "i16": (-(2**15), 2**15 - 1),
+    "i32": (-(2**31), 2**31 - 1),
+    "i64": (-(2**63), 2**63 - 1),
+    "u16": (0, 2**16 - 1),
+    "u32": (0, 2**32 - 1),
+    "u64": (0, 2**64 - 1),
 }
 
 
