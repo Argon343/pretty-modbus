@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2021 Forschungs- und Entwicklungszentrum Fachhochschule Kiel GmbH
+# 
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+bitstruct==8.12.1
+pymodbus==2.5.3
+pytest==7.0.0
+pytest-asyncio==0.18.0
+pyserial-asyncio==0.6
