@@ -53,7 +53,6 @@ class ServerContext:
         except pymodbus.exceptions.NoSuchSlaveException as e:
             raise NoSuchSlaveError from e
 
-    # FIXME Race condition if client issues write concurrently?
     def get_input_registers(
         self, variables: Optional[Iterable[str]] = None, unit: KeyType = DEFAULT_SLAVE
     ) -> dict[str, ValueType]:

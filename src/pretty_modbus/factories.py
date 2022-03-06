@@ -58,7 +58,6 @@ class SerialServer(ModbusSerialServer):
         self._event.set()
 
 
-# FIXME Types!
 def create_tcp_server(
     context: Optional[ModbusServerContext] = None,
     identity=None,

@@ -137,8 +137,9 @@ class CoilLayout:
     def __repr__(self) -> str:
         return str(self._variables)
 
-    # FIXME This has a healthy amount of code duplication with the register layout's analogous
-    # function. Maybe use an abstraction for chunking the memory?
+    # FIXME This has a healthy amount of code duplication with the
+    # register layout's analogous function. Maybe use an abstraction for
+    # chunking the memory?
     def build_payload(self, values: dict[str, ValueType]) -> list[Chunk]:
         """Build data for writing new values to memory.
 
