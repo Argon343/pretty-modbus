@@ -124,7 +124,7 @@ class CoilLayout:
                 raise InvalidAddressLayoutError(current, last)
 
     @classmethod
-    def load(cls, variables) -> cls:
+    def load(cls, variables) -> CoilLayout:
         return CoilLayout([Variable(**v) for v in variables])
 
     def __eq__(self, other: CoilLayout) -> bool:

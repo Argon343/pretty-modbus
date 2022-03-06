@@ -17,6 +17,14 @@ class NotConnectedError(ModbusBackendException):
     pass
 
 
+class NegativePeriodError(ModbusBackendException):
+    def __init__(self, period: float, msg: Optional[str] = None) -> None:
+        if msg is None:
+            msg = f"Expected non-negative period, received: {period}"
+        super().__init__(msg)
+        self.period = period
+
+
 class UnknownTypeError(ModbusBackendException):
     def __init__(self, type: str, msg: Optional[str] = None) -> None:
         if msg is None:

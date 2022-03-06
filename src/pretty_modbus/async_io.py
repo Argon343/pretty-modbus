@@ -6,9 +6,6 @@ from __future__ import annotations
 
 import asyncio
 
-import dataclasses
-from typing import Dict
-
 from pymodbus.register_read_message import (
     ReadInputRegistersResponse,
     ReadHoldingRegistersResponse,
@@ -17,7 +14,6 @@ from pymodbus.bit_read_message import ReadCoilsResponse, ReadDiscreteInputsRespo
 from pymodbus.bit_write_message import WriteMultipleCoilsResponse
 from pymodbus.register_write_message import WriteMultipleRegistersResponse
 
-from pretty_modbus.context import ServerContext
 from pretty_modbus.const import DEFAULT_SLAVE
 from pretty_modbus.layout import ServerContextLayout
 from pretty_modbus.exceptions import ModbusResponseError

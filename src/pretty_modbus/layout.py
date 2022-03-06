@@ -6,8 +6,6 @@ from __future__ import annotations
 
 import dataclasses
 
-from pretty_modbus.registers import RegisterLayout
-from pretty_modbus.coils import CoilLayout
 from pretty_modbus.exceptions import (
     NoSuchSlaveLayoutError,
     MissingSubLayoutError,

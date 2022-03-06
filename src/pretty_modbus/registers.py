@@ -7,7 +7,6 @@
 from __future__ import annotations
 
 import abc
-import copy
 import collections
 import dataclasses
 import itertools
@@ -330,7 +329,7 @@ class Struct(Variable):
         self._endianness = endianness
 
     @classmethod
-    def load(cls, name, fields, address=None, endianness=Endian.little) -> cls:
+    def load(cls, name, fields, address=None, endianness=Endian.little) -> Struct:
         fields = [Field(**d) for d in fields]
         return Struct(name, fields, address, endianness)
 
@@ -501,7 +500,7 @@ class _PayloadDecoder:
         registers: list[int],
         byteorder: str = Endian.little,
         wordorder: str = Endian.big,
-    ) -> cls:
+    ) -> _PayloadDecoder:
         """Create a decoder from ``pymodbus`` style register read-out.
 
         Args:
@@ -712,12 +711,12 @@ _DECODE_DISPATCH = {
 # We only check the numerical bounds of integers, right now. Checking
 # floats doesn't make much sense, as they just become infinite.
 _NUMERICAL_BOUNDS = {
-    "i16": (-(2**15), 2**15 - 1),
-    "i32": (-(2**31), 2**31 - 1),
-    "i64": (-(2**63), 2**63 - 1),
-    "u16": (0, 2**16 - 1),
-    "u32": (0, 2**32 - 1),
-    "u64": (0, 2**64 - 1),
+    "i16": (-(2 ** 15), 2 ** 15 - 1),
+    "i32": (-(2 ** 31), 2 ** 31 - 1),
+    "i64": (-(2 ** 63), 2 ** 63 - 1),
+    "u16": (0, 2 ** 16 - 1),
+    "u32": (0, 2 ** 32 - 1),
+    "u64": (0, 2 ** 64 - 1),
 }
 
 
